@@ -1,0 +1,32 @@
+{
+  "background": false,
+  "behavior": "application",
+  "version": "0.1",
+  "title": "Koders",
+  "name": "Koders",
+  "identifier": "com.koding.apps.koders",
+  "path": "~/Applications/Koders.kdapp",
+  "homepage": "bvallelunga.kd.io/koders",
+  "repository": "git://github.com/bvallelunga/koders.kdapp.git",
+  "description": "Koders : search for your fellow koders with ease!",
+  "category": "web-app",
+  "source": {
+    "blocks": {
+      "app": {
+        "files": [
+          "./index.coffee"
+        ]
+      }
+    },
+    "stylesheets": [
+      "./resources/style.css"
+    ]
+  },
+  "options": {
+    "type": "tab"
+  },
+  "icns": {
+    "128": "./resources/icon.128.png"
+  },
+  "fileTypes": []
+}

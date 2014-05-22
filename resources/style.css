@@ -1,0 +1,101 @@
+.koders.main-view {
+  background-color: #202527;
+  background-image: url("/a/images/home-pat.png");
+  overflow: auto;
+}
+
+.koders .text.search {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+
+  width: 500px;
+  height: auto;
+  display: block;
+  
+  line-height: initial;
+  
+  border: none;
+  border-radius: 3px;
+
+  padding:10px;
+  margin: 50px auto 20px auto;
+}
+
+.koders .text.search:hover {
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.koders .text.search:focus {
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.koders .results {
+  width: 500px;
+  height: auto;
+  margin: 0px auto;
+  overflow: auto;
+}
+
+.koders .results .result {
+  color: #fff;
+  text-decoration: none;
+  padding: 25px;
+  display: block;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.koders .results .result:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.koders .results .result:hover:active {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.koders .results .result:first-child {
+  box-shadow: none;
+}
+
+.koders .results .result .clear {
+  float: none;
+  clear: both;
+}
+
+.koders .results .result .avatar {
+  width: 100px;
+  height: 100px;
+  margin-right: 15px;
+  overflow: hidden;
+  border-radius: 3px;
+  float: left;
+}
+
+.koders .results .result .avatar img {
+  width: 100px;
+  height: 100px;
+}
+
+.koders .results .result .information {
+  float: left;
+}
+
+.koders .results .result .information .name {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.koders .results .result .information .nickname {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.koders .results .result .information .about {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}

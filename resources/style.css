@@ -9,16 +9,17 @@
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 
-  width: 500px;
+  width: 600px;
   height: auto;
   display: block;
   
+  font-size: 22px;
   line-height: initial;
   
   border: none;
   border-radius: 3px;
 
-  padding:10px;
+  padding: 10px;
   margin: 50px auto 20px auto;
 }
 
@@ -35,7 +36,7 @@
 }
 
 .koders .results {
-  width: 500px;
+  width: 600px;
   height: auto;
   margin: 0px auto 50px auto;
   overflow: auto;
@@ -47,6 +48,8 @@
   padding: 25px;
   display: block;
   border-top: solid 1px #2E3537;
+  border-left: solid 1px transparent;
+  border-right: solid 1px transparent;
 }
 
 .koders .results .result:hover {

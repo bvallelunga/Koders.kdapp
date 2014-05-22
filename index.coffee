@@ -15,12 +15,12 @@ class KodersMainView extends KDView
           $(".results").html ""  
           @name = @searchField.getValue().split(" ")
           
-          KD.remote.api.JAccount.some({
-                 "profile.firstName" : @name[0],
-                 "profile.lastName" : @name[1],                      
-            }, { 
+          KD.remote.api.JAccount.some(
+              "profile.firstName" : @name[0],
+              "profile.lastName" : @name[1],                      
+            ,
               limit: 20
-            }).then ()=>
+            ).then =>
               @results = []
               
               for account in arguments[0]

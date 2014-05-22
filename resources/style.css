@@ -66,6 +66,10 @@
   border-radius: 0 0 4px 4px;
 }
 
+.koders .results .result:only-child {
+  border-radius: 4px;
+}
+
 .koders .results .result .clear {
   float: none;
   clear: both;

@@ -1,4 +1,3 @@
-//coment
 class KodersMainView extends KDView
 
 	constructor:(options = {}, data)->

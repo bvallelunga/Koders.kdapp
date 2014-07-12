@@ -1,4 +1,4 @@
-/* Compiled by kdc on Tue May 27 2014 10:42:31 GMT+0000 (UTC) */
+/* Compiled by kdc on Sat Jul 12 2014 00:42:42 GMT+0000 (UTC) */
 (function() {
 /* KDAPP STARTS */
 /* BLOCK STARTS: /home/bvallelunga/Applications/Koders.kdapp/index.coffee */
@@ -19,14 +19,14 @@ KodersMainView = (function(_super) {
 
   KodersMainView.prototype.viewAppended = function() {
     var _this = this;
-    this.searchField = new KDInputView({
+    this.addSubView(this.searchField = new KDInputView({
       placeholder: "Search for fellow koders by name and press enter...",
       cssClass: "search",
       type: "text"
-    });
+    }));
     this.searchField.on("keyup", function(event) {
       if (event.which === 13) {
-        $(".results").html("");
+        _this.results.updatePartial("");
         _this.name = _this.searchField.getValue().split(" ");
         return KD.remote.api.JAccount.some({
           "profile.firstName": _this.name[0],
@@ -34,19 +34,18 @@ KodersMainView = (function(_super) {
         }, {
           limit: 20
         }).then(function() {
-          var account, _i, _len, _ref;
-          _this.results = [];
+          var account, results, _i, _len, _ref;
+          results = [];
           _ref = arguments[0];
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             account = _ref[_i];
-            _this.results.push("<a href=\"/" + account.profile.nickname + "\" class=\"result\">\n  <div class=\"avatar\">\n      <img src=\"" + (account.profile.avatar || 'https://www.gravatar.com/avatar/' + account.profile.hash + '?s=200&d=identicon') + "\"/>\n  </div>\n  <div class=\"information\">\n      <div class=\"name\">\n          " + account.profile.firstName + "\n          " + account.profile.lastName + "\n      </div>\n      <div class=\"nickname\">\n          " + account.profile.nickname + "\n      </div>\n      <div class=\"about\">\n          " + (account.profile.about || "") + "\n      </div>\n  </div>\n  <div class=\"clear\"></div>\n</a>");
+            results.push("<a href=\"/" + account.profile.nickname + "\" class=\"result\">\n  <div class=\"avatar\">\n    <img src=\"" + (account.profile.avatar || 'https://www.gravatar.com/avatar/' + account.profile.hash + '?s=200&d=identicon') + "\"/>\n  </div>\n  <div class=\"information\">\n    <div class=\"name\">\n      " + account.profile.firstName + "\n      " + account.profile.lastName + "\n    </div>\n    <div class=\"nickname\">\n      " + account.profile.nickname + "\n    </div>\n    <div class=\"about\">\n      " + (account.profile.about || "") + "\n    </div>\n  </div>\n  <div class=\"clear\"></div>\n</a>");
           }
-          return $(".results").html(_this.results.join(""));
+          return _this.results.updatePartial(results.join(""));
         });
       }
     });
-    this.addSubView(this.searchField);
-    return this.addSubView(new KDView({
+    return this.addSubView(this.results = new KDView({
       cssClass: "results"
     }));
   };

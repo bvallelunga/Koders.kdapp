@@ -60,20 +60,20 @@ class KodersController extends AppController
     
     super options, data
   
-  do ->
+do ->
+
+  # In live mode you can add your App view to window's appView
+  if appView?
   
-    # In live mode you can add your App view to window's appView
-    if appView?
-    
-      view = new KodersMainView
-      appView.addSubView view
-    
-    else
-    
-      KD.registerAppClass KodersController,
-        name     : "Koders"
-        routes   :
-          "/:name?/Koders" : null
-          "/:name?/bvallelunga/Apps/Koders" : null
-        dockPath : "/bvallelunga/Apps/Koders"
-        behavior : "application"
+    view = new KodersMainView
+    appView.addSubView view
+  
+  else
+  
+    KD.registerAppClass KodersController,
+      name     : "Koders"
+      routes   :
+        "/:name?/Koders" : null
+        "/:name?/bvallelunga/Apps/Koders" : null
+      dockPath : "/bvallelunga/Apps/Koders"
+      behavior : "application"
